@@ -12,9 +12,22 @@
 */
 function fizzBuzz() {
     // YOUR CODE GOES BELOW HERE //
-
-
-
+    // print numbers 1 to 100 using for loop
+    for (var i = 1; i <= 100; i++) {
+        // prints Fizz instead of number for multiples of 3 => conditional chain inside while loop
+          if (i % 3 === 0 && i % 5 === 0) {
+            console.log("FizzBuzz");
+          } else if (i % 3 === 0) {
+            console.log("Fizz");
+          } else if (i % 5 === 0) {
+            console.log("Buzz");
+          } else {
+            console.log(i);
+          }
+        // prints Buzz instead of number for multipes of 5 
+        // prints FizzBuzz for multiples of both
+        }
+    
     // YOUR CODE GOES ABOVE HERE //
 }
 

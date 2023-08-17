@@ -13,7 +13,9 @@
  */
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
+    return function(value) {
+        return value > base;
+    }
     
     
     
@@ -27,7 +29,9 @@ function createGreaterThanFilter(base) {
  */
 function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
+    return function(value) {
+        return value < base;
+    }
     
     
     
@@ -41,7 +45,9 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    
+    return function(string) {
+        return string[0].toLowerCase() == startsWith.toLowerCase();
+    }
     
     
     
@@ -55,7 +61,9 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
-    
+    return function(string){
+        return string[string.length - 1].toLowerCase() === endsWith.toLowerCase();
+    }
     
     
     
@@ -69,10 +77,14 @@ function createEndsWithFilter(endsWith) {
  * TIP: You need to loop over the Strings, right? We need to pass each String to 
  * the modify Function, but we need to collect the results into some collection.
  */
-function modifyStrings(strings, modify) {
+function modifyStrings(strings, modify) { // modify is a function
     // YOUR CODE BELOW HERE //
-    
-    
+    var storage = [];
+    // loop over strings array
+    for (var i = 0; i < strings.length; i++) {
+        storage.push(modify(strings[i]));
+    }
+    return storage;
     
     
     // YOUR CODE ABOVE HERE //
@@ -87,11 +99,16 @@ function modifyStrings(strings, modify) {
  * 
  * TIP: You need to loop over the Strings, right? And pass them to the test?
  */
-function allStringsPass(strings, test) {
+function allStringsPass(strings, test) { // test is a function that will return T or F
     // YOUR CODE BELOW HERE //
-    
-    
-    
+    // loop over strings
+    for (var i = 0; i < strings.length; i++) {
+        if (test(strings[i]) === true) {
+            return true;
+        } else {
+            return false;
+        }
+    } 
     
     // YOUR CODE ABOVE HERE //
 }

@@ -23,10 +23,19 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
-    
-    
-    
-    
+    // init storage array
+    var storage = [];
+    // compare start and end args
+    if (start < end) {
+        for (var i = start; i <= end; i++) {
+            storage.push(i);
+        }
+    } else if (start > end) {
+        for (var i = start; i >= end; i--) {
+            storage.push(i);
+        }
+    }
+    return storage;
     // YOUR CODE GOES ABOVE HERE //
 }
 

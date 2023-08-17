@@ -99,16 +99,23 @@ function modifyStrings(strings, modify) { // modify is a function
  * 
  * TIP: You need to loop over the Strings, right? And pass them to the test?
  */
+
+// I: array of strings, function to test strings
+// o: return boolean based on whether tests passed
+// c: all strings need to pass tests to return true
 function allStringsPass(strings, test) { // test is a function that will return T or F
     // YOUR CODE BELOW HERE //
-    // loop over strings
+    // loop over strings array
+    // pass index values to test (function)
+    // return boolean value, true if all tests pass
+    // do I need a resolve to variable to push true or false to?
     for (var i = 0; i < strings.length; i++) {
         if (test(strings[i]) === true) {
-            return true;
+            resolveTo.push(true);
         } else {
-            return false;
+            resolveTo.push(false);
         }
-    } 
+    }
     
     // YOUR CODE ABOVE HERE //
 }

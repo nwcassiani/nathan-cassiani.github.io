@@ -32,14 +32,10 @@ function isArray(value) {
 function isObject(value) {
     // YOUR CODE BELOW HERE //
     // use conditionals to root out arrays, null and Date
-    if (typeof value === 'object' && Array.isArray(value)) {
-        return false;
-    } else if (typeof value === 'object' && value === null) {
-        return false;
-    } else if (typeof value === 'object' && value instanceof Date) {
-        return false;
-    } else {
+    if (typeof value === 'object' && !(Array.isArray(value)) && value !== null && !(value instanceof Date)) {
         return true;
+    } else {
+      return false;
     }
     // YOUR CODE ABOVE HERE //
 }
@@ -52,14 +48,11 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
-    if (value === null) {
-        return false;
-    } else if (value instanceof Date) {
-        return false;
-    } else if (typeof value === 'object') {
+    if (typeof value === 'object' && value !== null && !(value instanceof Date)) {
         return true;
+    } else {
+        return false;
     }
-    
     // YOUR CODE ABOVE HERE //
 }
 

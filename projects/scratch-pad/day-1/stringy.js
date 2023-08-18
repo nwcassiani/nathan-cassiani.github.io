@@ -183,14 +183,14 @@ function longest(stringOne, stringTwo) {
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     // determine if string 1 is higher in abc order
-    if (stringOne < stringTwo){
+    if (stringOne.toLowerCase() < stringTwo.toLowerCase()){
         // return 1 if first is higher in order 
         return 1;
         // if second string is higher in abc order return -1
-    } else if (stringOne > stringTwo){
+    } else if (stringOne.toLowerCase() > stringTwo.toLowerCase()){
         return -1;
         // return 0 if they are equal
-    } else if (stringOne[0] === stringTwo[0]){
+    } else if (stringOne[0].toLowerCase() === stringTwo[0].toLowerCase()){
         return 0;
     }
 
@@ -209,14 +209,14 @@ function sortAscending(stringOne, stringTwo) {
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
      // determine if string 1 is lower in abc order
-     if (stringOne > stringTwo){
+     if (stringOne.toLowerCase() > stringTwo.toLowerCase()){
         // return 1 if first is lower in order 
         return 1;
         // if second string is higher in abc order return -1
-    } else if (stringOne < stringTwo){ // return -1
+    } else if (stringOne.toLowerCase() < stringTwo.toLowerCase()){ // return -1
         return -1;
         // return 0 if they are equal
-    } else if (stringOne[0] === stringTwo[0]){
+    } else if (stringOne[0].toLowerCase() === stringTwo[0].toLowerCase()){
         return 0;
     }
 

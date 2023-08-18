@@ -44,7 +44,7 @@ function makeContact(id, nameFirst, nameLast) {
 } 
 
 
-function makeContactList(contact) {
+function makeContactList(contact, fullName) {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
@@ -55,16 +55,32 @@ function makeContactList(contact) {
         length: function() {
             return contacts.length;
         },
-        addContact: function() {
+        addContact: function(contact) {
             contacts.push(contact);
         },
         findContact: function(fullName) {
-            // for (var i = 0; i < contacts.length; i++) {
-            //     if (fullName === contacts[i]['firstName'] + " " + contacts[i][''])
-            // }
+            // loop through contacts array
+            for (var i = 0; i < contacts.length; i++) {
+                // compare fullNames string with values from contact list
+                if (fullName === contacts[i]['nameFirst'] + " " + contacts[i]['nameLast']) {
+                    // if match is found return contact object
+                    return contacts[i];
+                } // what to return outside of loop?
+            }  
         },
-        removeContact: function() {
-            contacts.splice(0, 1)
+        removeContact: function(contact) {
+            return contacts.splice(contact, 1);
+             
+        },
+        printAllContactNames: function() {
+            // declare storage array
+            var fullNamesArr = [];
+            // loop through contacts array
+            for (var i = 0; i < contacts.length; i++) {
+                // push full names to storage array
+                fullNamesArr.push(contacts[i]['nameFirst'] + " " + contacts[i]['nameLast']);
+                }
+                return fullNamesArr.join("\n");
         }
     }
 }

@@ -108,15 +108,16 @@ function allStringsPass(strings, test) { // test is a function that will return 
     // loop over strings array
     // pass index values to test (function)
     // return boolean value, true if all tests pass
-    // do I need a resolve to variable to push true or false to?
+    // do I need an output variable
+    var output = "";
     for (var i = 0; i < strings.length; i++) {
         if (test(strings[i]) === true) {
-            resolveTo.push(true);
+            output = true;
         } else {
-            resolveTo.push(false);
+            return false;
         }
     }
-    
+    return output;
     // YOUR CODE ABOVE HERE //
 }
 

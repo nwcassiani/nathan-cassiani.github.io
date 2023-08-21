@@ -1,9 +1,9 @@
 /**
  * OPERATORS
  * 
- * 0. In Javascript, operators are special symbols used to perform operations on operands (values and variables). Putting
- * operator between two values will apply it to those values and produce new values. Operators 
- * are used to assign values, perform arithmetic operations, compare values, and more. 
+ * 0. In Javascript, operators are special symbols used to perform operations on operands (values and variables). Putting an
+ * operator between two values will apply it to those values and produce new values. Operators are used to assign values, 
+ * perform arithmetic operations, compare values, and more. 
  * 
  * 1. Assignment operators are used to assign value to variables. The "=" operator is called the assignment operator; using it 
  * assigns value to a variable.

@@ -107,6 +107,12 @@ console.log(animals.length);
 //////////////////////////////////////////////////////////////////////
 // use array for a list of friends, as arrays denote a list of values
 var friends = [];
+// write gatRandom function
+function getRandom(animals) {
+  return animals[(Math.floor(Math.random() * animals.length))];
+}
+
+// add random animal to friends using function
 
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and

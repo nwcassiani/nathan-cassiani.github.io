@@ -12,19 +12,51 @@
 //////////////////////////////////////////////////////////////////////
 // Step 1 - Search ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+// declare search function
+function search(animals, name) {
+    // looks through animals array 
+    for (var i = 0; i < animals.length; i++) {
+        // if name of animal exists 
+        if (name === animals[i].name) {
+            // return animals object
+            return animals[i];
+            // if name not found return null
+        } 
+    }
+    return null;
+}
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 2 - Replace //////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+// declare replace function
+function replace(animals, name, replacement) {
+    // loop through animals array
+    for (var i = 0; i < animals.length; i++) {
+        // if name exists within array
+        if (name === animals[i].name) {
+            // replace object with replacement
+            animals[i] = replacement;
+        }
+    }
+    // otherwise do nothing
+}
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Remove ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+// declare remove function
+function remove(animals, name) {
+    // // loop through animals
+    // for (var i = 0; i < animals.length; i++) {
+    //     // if name exists
+    //     if (name === animals[i].name) {
+    //         return animals[i];
+    //     }
+    // }
+}
 
 
 //////////////////////////////////////////////////////////////////////

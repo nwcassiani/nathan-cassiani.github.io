@@ -100,8 +100,8 @@ animals.push(dog);
 animals.push(bear);
 
 // log to console
-console.log(animals);
-console.log(animals.length);
+// console.log(animals);
+// console.log(animals.length);
 //////////////////////////////////////////////////////////////////////
 // Step 7 - Making Friends ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
@@ -109,11 +109,19 @@ console.log(animals.length);
 var friends = [];
 // write gatRandom function
 function getRandom(animals) {
-  return animals[(Math.floor(Math.random() * animals.length))];
+  return (Math.floor(Math.random() * animals.length));
 }
 
 // add random animal to friends using function
+friends.push(animals[getRandom(animals)].name);
 
+// log to console
+// console.log(friends);
+
+// add friends list array as a property friends to one of the animals
+animals[0].friends = friends;
+// log to console
+console.log(animals);
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
  * move onto Part 2 in the file called "functions.js"

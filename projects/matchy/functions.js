@@ -50,19 +50,34 @@ function replace(animals, name, replacement) {
 // declare remove function
 function remove(animals, name) {
     // // loop through animals
-    // for (var i = 0; i < animals.length; i++) {
+    for (var i = 0; i < animals.length; i++) {
     //     // if name exists
-    //     if (name === animals[i].name) {
-    //         return animals[i];
-    //     }
-    // }
+         if (name === animals[i].name) {
+             return animals.splice(animals[i], 1);
+         }
+     }
+
 }
 
 
 //////////////////////////////////////////////////////////////////////
 // Step 4 - Add ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+// declare add function
+function add(animals, animal) {
+    // loop through animals array
+    // checks that animal object has a name property with length > 0
+    // checks that animal object has a species property with length > 0
+    // checks that animal object has a unique name
+    // add new animal to animals only if all these conditions pass
+    for (var i = 0; i < animals.length; i++) {
+        if (animal.name.length > 0 && animal.species.length > 0 && animal.name !== animals[i].name) {
+            return animals.push(animal);
+        } else {
+            return false;
+        }
+    }
+}
 
 
 /**

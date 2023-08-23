@@ -3,7 +3,8 @@
 //////////////////////////////////////////////////////////////////////
 
 function objectValues(object) {
-
+    // take an objects values and return it's values in an array
+    return Object.values(object);
 } 
 
 //////////////////////////////////////////////////////////////////////
@@ -11,6 +12,9 @@ function objectValues(object) {
 //////////////////////////////////////////////////////////////////////
 
 function keysToString(object) {
+    // return object keys joined to a string
+    // values separated by a space
+    return Object.keys(object).join(" ");
 
 }
 
@@ -19,7 +23,17 @@ function keysToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function valuesToString(object) {
-    
+    // declare output array
+    var output = [];
+    // loop through object values and check for string values
+    for (var i = 0; i < Object.values(object).length; i++) {
+        if (typeof Object.values(object)[i] === 'string'){
+            output.push(Object.values(object)[i]);
+        }
+    }
+    // return object string values
+    // values separated by a space
+    return output.join(" ");
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -27,7 +41,12 @@ function valuesToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function arrayOrObject(collection) {
-    
+    // if typeof collection deeply equals object and is array return array
+    if (typeof collection === 'object' && Array.isArray(collection)) {
+        return 'array';
+    } else if (typeof collection === 'object' && !(Array.isArray(collection))) {
+        return 'object';
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -35,7 +54,8 @@ function arrayOrObject(collection) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeWord(string) {
-    
+    // return string with first letter capitalized
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -43,7 +63,15 @@ function capitalizeWord(string) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeAllWords(string) {
-    
+    // output array
+    var output = [];
+    // split string into array
+    var strArr = string.split(" ");
+    // loop through array
+    for (var i = 0; i < strArr.length; i++) {
+        output.push(strArr[i].charAt(0).toUpperCase() + strArr[i].slice(1));
+    }
+    return output.join(" ");
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -51,7 +79,8 @@ function capitalizeAllWords(string) {
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
-
+    // return welcome name with name property from object
+    return "Welcome " + object.name.charAt(0).toUpperCase() + object.name.slice(1) + "!";
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -59,7 +88,8 @@ function welcomeMessage(object) {
 //////////////////////////////////////////////////////////////////////
 
 function profileInfo(object) {
-
+    // return Name is a Species
+    return object.name.charAt(0).toUpperCase() + object.name.slice(1) + " is a " + object.species.charAt(0).toUpperCase() + object.species.slice(1);
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -67,7 +97,8 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
-
+    // if object has own noises property return string of array values
+    
 }
 
 //////////////////////////////////////////////////////////////////////

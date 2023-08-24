@@ -136,10 +136,9 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
-    // return true if name is in objects friends array, false if not 
-    if (object.friends.includes(name)) {
+    if (object.hasOwnProperty('friends') && object.friends.includes(name)) {
         return true;
-    } else if (!object.friends.includes(name)){
+    } else {
         return false;
     }
 }

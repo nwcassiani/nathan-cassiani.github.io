@@ -98,7 +98,13 @@ function profileInfo(object) {
 
 function maybeNoises(object) {
     // if object has own noises property return string of array values
-    
+    if (object.hasOwnProperty('noises') && object.noises.length > 0) {
+        // return string of array values seperated by a space
+        return object.noises.join(" ");
+    } else if (!object.hasOwnProperty('noises') || object.noises.length === 0) {
+        // return string statement
+        return "there are no noises";
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -106,6 +112,11 @@ function maybeNoises(object) {
 //////////////////////////////////////////////////////////////////////
 
 function hasWord(string, word) {
+    // should take a string of words and word and return true if word is in string
+    // split string into array
+    var text = string.split(" ");
+    
+    return text.includes(word);
 
 }
 
@@ -114,7 +125,10 @@ function hasWord(string, word) {
 //////////////////////////////////////////////////////////////////////
 
 function addFriend (name, object) {
+    // take a name and object and add name to objects friends array, and return object
+    object.friends.push(name);
 
+    return object;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -122,7 +136,12 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
-
+    // return true if name is in objects friends array, false if not 
+    if (object.friends.includes(name)) {
+        return true;
+    } else if (!object.friends.includes(name)){
+        return false;
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -146,7 +165,13 @@ function updateObject(object, key, value) {
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
-
+    // should remove any props on object that are listed in array
+    // loop through array
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] === Object.keys(object)) {
+            delete object[array[i]];
+        }
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -154,7 +179,17 @@ function removeProperties(object, array) {
 //////////////////////////////////////////////////////////////////////
 
 function dedup(array) {
-
+    // take array and return a new array with all duplicates removes
+    // output array declaration
+    var output = [];
+    // for loop 
+    for (var i = 0; i < array.length; i++) {
+        // if statement
+        if (output.indexOf(array[i]) === -1) {
+            output.push(array[i]);
+        }
+    }
+    return output;
 }
 
 //////////////////////////////////////////////////////////////////////

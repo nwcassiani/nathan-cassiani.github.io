@@ -71,9 +71,9 @@ function add(animals, animal) {
     // checks that animal object has a unique name
     // add new animal to animals only if all these conditions pass
     for (var i = 0; i < animals.length; i++) {
-        if (animal.name.length > 0 && animal.species.length > 0 && animal.name !== animals[i].name) {
+        if (animal.name.length > 0 && animal.species.length > 0 && animal.name.toLowerCase() !== animals[i].name.toLowerCase()) {
             return animals.push(animal);
-        } else if (animal.name === animals[i].name) {
+        } else if (animal.name.toLowerCase() === animals[i].name.toLowerCase()) {
             return false;
         }
     }

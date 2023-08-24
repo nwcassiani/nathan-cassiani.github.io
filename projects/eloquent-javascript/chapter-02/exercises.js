@@ -4,13 +4,33 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 function triangles() {
-
+  // write loop that makes seven calls to console
+  // output is a triangle of hashtags
+  for (let str = "#"; str.length < 8; str += "#") {
+    console.log(str);
+  }
 }
 ////////////////////////////////////////////////////////////////////////////////
 // fizzBuzz ////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
 function fizzBuzz() {
+    // print numbers 1 to 15 using for loop
+    for (var i = 1; i <= 15; i++) {
+      // prints fizz instead of number for multiples of 3 => conditional chain inside while loop
+        if (i % 3 === 0 && i % 5 === 0) {
+          console.log("fizzbuzz");
+        } else if (i % 3 === 0) {
+          console.log("fizz");
+        } else if (i % 5 === 0) {
+          console.log("buzz");
+        } else {
+          console.log(i);
+        }
+      // prints buzz instead of number for multipes of 5 
+      // prints fizzbuzz for multiples of both
+      }
+  
   
 }
 

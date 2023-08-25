@@ -148,7 +148,35 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
+    // take a name and list of people and return a list of all the names that <name> is not friends with
+    // declare name list array
+    var nameList = [];
+    // declare output array
+    var output = [];
+    var current = null;
+    // name is a key in an object, which is stored in an array
+    // friends is a key in an object which is stored in an array
+    // loop through outer array will give access to objects
+    for (var i = 0; i < array.length; i++) {
+        // if name is found in friends array, push to output array
+        if (name === array[i].name) {
+            current = array[i];
+        } else  {
+            nameList.push(array[i].name);
+        }
+    }
 
+    if(current === null){
+        return nameList;
+    }
+
+    for(var i = 0; i < nameList.length; i++){
+        if(current.friends.indexOf(nameList[i]) == -1){
+            output.push(nameList[i]);
+        }
+    }
+
+    return output;
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -156,7 +184,14 @@ function nonFriends(name, array) {
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
-
+    // if key does exist on object, update it
+    // if key doesn't exist on object, add it
+    if (!object.hasOwnProperty(key)) {
+        object[key] = value;
+    } else if (object.hasOwnProperty(key)) {
+        object[key] = value;
+    }
+    return object;
 }
 
 //////////////////////////////////////////////////////////////////////

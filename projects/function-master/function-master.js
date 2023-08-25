@@ -202,10 +202,11 @@ function removeProperties(object, array) {
     // should remove any props on object that are listed in array
     // loop through array
     for (var i = 0; i < array.length; i++) {
-        if (array[i] === Object.keys(object)) {
+        if (object.hasOwnProperty(array[i])) {
             delete object[array[i]];
         }
     }
+    
 }
 
 //////////////////////////////////////////////////////////////////////

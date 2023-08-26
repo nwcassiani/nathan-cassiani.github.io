@@ -166,15 +166,14 @@ function nonFriends(name, array) {
         }
     }
 
-    if(current === null){
-        return nameList;
-    }
-
-    for(var i = 0; i < nameList.length; i++){
-        if(current.friends.indexOf(nameList[i]) == -1){
-            output.push(nameList[i]);
+    // loop through nameList
+    for (var i = 0; i < nameList.length; i++) {
+        // if current.friends does not include nameList[i]
+        if (!current.friends.includes(nameList[i])) {
+          // push to output
+          output.push(nameList[i]);
         }
-    }
+      }
 
     return output;
 }

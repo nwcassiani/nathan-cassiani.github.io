@@ -39,7 +39,27 @@ function fizzBuzz() {
 // drawChessboard //////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function drawChessboard() {
+function drawChessboard(size) {
+  // write a program that creates a string that represents an 8X8 chess board
+  // use newline characters to separate lines
+  // define a binding size = 8
+  // change the program that it works for any size (width/height)
+  var string = "";
+
+  // for loop that pushes hashtag character on every odd index?
+  for (var i = 0; i < size; i++) { // x axis
+    // nested loop for y axis
+    for (var j = 0; j < size; j++) {
+      if ((i + j) % 2 == 0) {
+        string += " ";
+      } else {
+        string += "#";
+      }
+    }
+    string += "\n";
+  }
+
+  console.log(string);
 
 }
 

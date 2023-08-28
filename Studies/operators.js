@@ -75,7 +75,30 @@ console.log("3" == 3); // string value of 3 is "loosely equal" to number value o
 // < === > Strict Equality: Will compare to values but will not force type coercion
 console.log("3" === 3); // will print => false
 
+// > : Greater than
+// >=  Greater than or equal to
+// < : Less than
+// <= : Less than or equal to 
+console.log(100 > 200); // prints => false
 
+// We can use comparison operators to produce Boolean values, which will influence how our code runs
+if (200 >= 100) { // if true... which it is
+    // code here will execute
+    console.log("Very True");
+}
+
+// 4. Logical Operators
+// The and (&&) operator results in true only if both values given to it are true
+console.log(true && true); // prints => true
+console.log(true && false); // prints => false
+
+// The or (||) operator results true if either of the values given to it are true
+console.log(true || false); // prints => true
+
+// The not (!) operator (also called bang operator) flips the value given to it. 
+console.log(!true); // prints => false 
+console.log(!false); // prints => true
+// The ! operator is also an example of a unary operator
 
 // 5. Unary Operators
 // the delete operator deletes a property from an object
@@ -89,6 +112,8 @@ console.log(myObj); // prints { name: "Nathan" } to console, age property has be
 // typeof operator 
 // the typeof operator returns a string indicating the type of value passed to the operator
 console.log(typeof myObj.name); // prints => string
+
+// - operator
 
 // 6. Ternary Operator
 // Syntax: condition ? exprIfTrue : exprIfFalse

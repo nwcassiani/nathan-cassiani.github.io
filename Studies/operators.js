@@ -113,7 +113,10 @@ console.log(myObj); // prints { name: "Nathan" } to console, age property has be
 // the typeof operator returns a string indicating the type of value passed to the operator
 console.log(typeof myObj.name); // prints => string
 
-// - operator
+// The unary negation (-) operator precedes it's operand and negates it
+let x = 4;
+let y = -x;
+console.log(y); // prints => -4
 
 // 6. Ternary Operator
 // Syntax: condition ? exprIfTrue : exprIfFalse

@@ -44,3 +44,4 @@ console.log(myName); // prints => william
 // However, they cannot be redeclared; their declarations are not hoisted like var variables
 let lastName = "cassiani";
 // let lastName = "william" => I have this redeclaration commented out as it is throwing an error in my code
+// let is naturally block scoped

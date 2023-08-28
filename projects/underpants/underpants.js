@@ -161,11 +161,13 @@ _.indexOf = function(array, value) {
 */
 
 _.contains = function(array, value) {
+    let check = false;
     // loop through array
     for (var i = 0; i < array.length; i++) {
         // use ternary operator
-        return array[i] === value ? true : false;
+        check = array[i] === value ? true : check;
     }
+    return check;
 };
 
 /** _.each

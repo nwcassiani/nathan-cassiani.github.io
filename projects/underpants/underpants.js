@@ -193,8 +193,11 @@ _.each = function(collection, func) {
             // invoke function once on eachh element
             func(collection[i], i, collection);
         }
-    } else {
+    } else if (typeof collection === 'object'){
         // iterate, for an object
+        for (var key in collection) {
+            func(collection[key], key, collection);
+        }
             // call function on each value, key and collection
     }
 };
@@ -210,6 +213,18 @@ _.each = function(collection, func) {
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
+_.unique = function(array) {
+    // output array
+    let output = [];
+    // return new array of all elements from array removing duplicates
+    // use _.indexOf()
+    // loop over array
+    for (var i = 0; i < array.length; i++) {
+        output.push(_.indexOf(array, array[i]));
+    }
+
+    return output;
+};
 
 /** _.filter
 * Arguments:
@@ -226,7 +241,18 @@ _.each = function(collection, func) {
 * Extra Credit:
 *   use _.each in your implementation
 */
-
+_.filter = function(array, func) {
+    // init output array
+    let output = [];
+    // call func for each element in array
+    for (var i = 0; i < array.length; i++) {
+        if(func(array[i], i, array) === true) {
+            output.push(array[i]);
+        }
+    }
+    // return new array of elements which calling func return true
+    return output;
+};
 
 /** _.reject
 * Arguments:
@@ -240,6 +266,18 @@ _.each = function(collection, func) {
 * Examples:
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
+
+_.reject = function(array, func) {
+    let output = [];
+    // call function for each element in array
+    for (var i = 0; i < array.length; i++) {
+        if (func(array[i], i, array) === false){
+            output.push(array[i]);
+        }
+    }
+    // return new array of elements for which function returned false
+    return output;
+};
 
 
 /** _.partition
@@ -261,6 +299,22 @@ _.each = function(collection, func) {
 }
 */
 
+_.partition = function(array, func) {
+    // truthy output array
+    let truArr = [];
+    let falseArr = [];
+    // call func for each element in array
+    for (var i = 0; i < array.length; i++) {
+        if (func(array[i], i, array) === true) {
+            truArr.push(array[i]);
+        } else if (func(array[i], i, array) === false) {
+            falseArr.push(array[i]);
+        }
+    }
+    // return array made up of an array with all truthy values, and an array of falsey values
+    return [truArr, falseArr];
+};
+
 
 /** _.map
 * Arguments:
@@ -278,6 +332,22 @@ _.each = function(collection, func) {
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
 
+_.map = function(collection, func) {
+    let output = [];
+    // if collection is an array
+    if(Array.isArray(collection)) {
+        for (var i = 0; i < collection.length; i++) {
+            // use input func to create modified version of current value
+            output.push(func(collection[i], i, collection));
+        }
+    } else if (typeof collection === 'object'){ 
+        for (var key in collection) {
+            output.push(func(collection[key], key, collection))
+        }
+        // iterate object
+    }
+    return output;
+};
 
 /** _.pluck
 * Arguments:

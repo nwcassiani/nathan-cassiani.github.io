@@ -67,3 +67,18 @@ function someFunc() {
 someFunc();
 console.log(x); // will throw error, x is not defined
 
+// 3. Hoisting
+// Variable declarations are hoisted to the top of their scope, but not initialization
+
+console.log(fullName); // prints => undefined
+
+var fullName = 'Nathan Cassiani';
+
+console.log(fullName); // prints => Nathan Cassiani
+
+// let and const variables are not hoisted. You will get a reference error if you try referencing them before declaration
+console.log(city); // will throw reference error; though the system can see the initialization, you won't be able to access the variable
+console.log(job); // will throw reference error; same as above
+
+let city = 'New Orleans';
+const job = 'musician';

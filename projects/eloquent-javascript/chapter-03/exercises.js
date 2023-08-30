@@ -41,8 +41,18 @@ function countChars() {
 // countBs /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function countBs() {
-
+function countBs(string) {
+  // init sum variable
+  let sum = 0;
+  // takes a string as an argument and returns how many upper case B's are in string
+  // loop over string and compare [i] with letter uppercase B
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === 'B') {
+      sum += 1;
+    }
+  }
+  // return sum
+  return sum;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

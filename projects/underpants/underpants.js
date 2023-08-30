@@ -398,6 +398,48 @@ _.pluck = function(array, prop) {
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
+_.every = function(collection, func) {
+    // call func for every element of collection
+    // if collection is array or object
+    // if return value of func called on every element is true, return true
+    // if one element returns false, return false
+    // if no func, return true if every element is truthy, otherwise return false
+    if (Array.isArray(collection)) {
+        // if func undefined
+        if (func === undefined) {
+            // loop over collection array
+            for (let i = 0; i < collection.length; i++) {
+                if (collection[i] === false) {
+                    return false; 
+                }
+            }
+            return true; 
+        } else {
+        // for loop over collection
+            for (var i = 0; i < collection.length; i++) {
+                if (func(collection[i], i, collection) === false) {
+                    return false; 
+                } 
+            }
+        }
+    
+    } else if (typeof collection === 'object') {
+        if (func === undefined) {
+            for (var key in collection) {
+                if (collection[key] === false) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        for (var key in collection) {
+            if(func(collection[key], key, collection) === false) {
+                return false;
+            }
+        }
+    }
+     return true;
+};
 
 /** _.some
 * Arguments:

@@ -220,7 +220,9 @@ _.unique = function(array) {
     // use _.indexOf()
     // loop over array
     for (var i = 0; i < array.length; i++) {
-        output.push(_.indexOf(array, array[i]));
+        if (_.index0f(array, array[i]) > -1) {
+            output.push(array[i]);
+        }
     }
 
     return output;
@@ -359,6 +361,20 @@ _.map = function(collection, func) {
 * Examples:
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
+
+_.pluck = function(array, prop) {
+    // output array
+    let output = [];
+    // return array containing value of prop for every element in array
+    // use map function
+    // loop over array
+    for (let i = 0; i < array.length; i++) {
+        output.push(_.map(array[i], function() {
+            return array[i][prop];
+        }));
+    }
+
+};
 
 
 /** _.every

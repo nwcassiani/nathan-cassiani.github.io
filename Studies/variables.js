@@ -45,3 +45,25 @@ console.log(myName); // prints => william
 let lastName = "cassiani";
 // let lastName = "william" => I have this redeclaration commented out as it is throwing an error in my code
 // let is naturally block scoped
+
+// const: like let, const variables are naturally block-scoped,they cannot be initialized as undefined, or redeclared
+// However, they cannot be reassigned. If const is used on an object, though, it's properties can be added, updated, or removed
+
+/* var is function scoped; let and const are block scoped. This means that var variables will be stuck in the scope of a function, but
+not in the scope of if/else statements, or loops. let and const will be stuck in scope of any code block (block scoped)
+*/
+if (true) {
+    var x = 10;
+    let y = 20;
+    const c = 30;
+}
+console.log(x); // prints => 10
+console.log(y, z); // prints => Reference Error; y and z not defined
+
+function someFunc() {
+    var x = 10;
+}
+
+someFunc();
+console.log(x); // will throw error, x is not defined
+

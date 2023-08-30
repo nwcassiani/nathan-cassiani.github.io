@@ -456,6 +456,19 @@ _.pluck = function(array, prop) {
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
 
+_.extend = function(obj1, obj2, ...moreObjs) {
+    // copy props from obj2 into obj1
+    Object.assign(obj1, obj2);
+    // if more props assign, cope their props into obj1 as well
+    // return updated obj1
+    const args = [...moreObjs];
+    for (let i = 0; i < args.length; i++) {
+        Object.assign(obj1, args[i]);
+    }
+    return obj1;
+
+};
+
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////

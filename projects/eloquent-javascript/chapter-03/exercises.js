@@ -22,8 +22,10 @@ function isEven(num) {
     return true;
   } else if (num == 1) {
     return false;
+  } else if (num < 0) {
+    return isEven(-num);
   } else {
-    return ((num - 2) % 2 === 0);
+    return isEven(num - 2);
   }
 }
 

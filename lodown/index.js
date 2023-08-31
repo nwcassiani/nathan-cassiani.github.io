@@ -52,3 +52,23 @@ function typeOf(value) {
 }
 
 module.exports.typeOf = typeOf;
+
+/**
+ * last: Designed to return the last <number> of items in an array.
+ * 
+ * @param {Array} array: The array to draw values from
+ * @param {Number} number: The number of values to return, starting from the last value of the input array
+ */
+function last(array, number) {
+    // if array is not an array, return []
+    if (!(Array.isArray(array)) || number < 0) {
+        return [];
+        // if number is not given or NaN, return first element in array
+    } else if (isNaN(number) || !number) {
+        return array[array.length-1];
+    } else {
+        // return last <number> elements in array
+        return array.slice(-number);
+    }
+}
+module.exports.last = last;

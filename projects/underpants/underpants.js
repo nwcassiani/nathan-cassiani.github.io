@@ -481,6 +481,24 @@ _.every = function(collection, func) {
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 
+_.reduce = function(array, func, seed) {
+    let result;
+    // determine if seed was not passed
+    if (seed === undefined){
+        result = array[0];
+        for (let i = 1; i < array.length; i++) {
+            result = func(result, array[i], i);
+        }
+    } else { // else there was a seed value
+        result = seed;
+        for (let i = 0; i < array.length; i++) {
+            // call function on each element passing in pre result, current element, index
+            result = func(result, array[i], i); // reassign result to invocation of callback func
+        }
+    }
+    return result;
+};
+
 
 /** _.extend
 * Arguments:

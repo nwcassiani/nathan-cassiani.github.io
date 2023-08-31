@@ -339,7 +339,7 @@ _.map = function(collection, func) {
     // if collection is an array
     if(Array.isArray(collection)) {
         for (var i = 0; i < collection.length; i++) {
-            // use input func to create modified version of current value
+            // push each func call to output array
             output.push(func(collection[i], i, collection));
         }
     } else if (typeof collection === 'object'){ 
@@ -368,7 +368,7 @@ _.pluck = function(array, prop) {
     // use map function, map function returns an array
     // loop over array
     for (let i = 0; i < array.length; i++) {
-        return _.map(array[i], function() {
+        return _.map(array[i], function(){
             return array[i][prop];
          });
         }
@@ -460,6 +460,49 @@ _.every = function(collection, func) {
 *   _.some([1,3,5], function(e){return e % 2 === 0}) -> false
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
+
+_.some = function(collection, func) {
+    // call function for every element of collection
+    // if collection is array
+    if (Array.isArray(collection)) {
+        // if func is undefind
+        if (func === undefined) {
+            // return true if at least one element is truthy
+            // loop over array
+            for (let i = 0; i < collection.length; i++){
+                // if one element is truthy
+                if (collection[i] === true) {
+                    return true;
+                }
+            }
+            return false;
+        } else {
+            // for loop over collection
+            for (var i = 0; i < collection.length; i++) {
+                if (func(collection[i], i, collection) === true) {
+                    return true; 
+                }
+            }
+            return false;
+        }
+    } else if (typeof collection === 'object') {
+        if (func === undefined) {
+            for (var key in collection) {
+                if (collection[key] === true) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        for (var key in collection) {
+            if(func(collection[key], key, collection) === true) {
+                return true;
+            }
+        }
+    }
+     return false;
+
+};
 
 
 /** _.reduce

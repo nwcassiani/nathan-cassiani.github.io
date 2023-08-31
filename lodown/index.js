@@ -33,3 +33,22 @@ function identity(value) {
     return value;
 }
 module.exports.identity = identity;
+
+/**
+ * typeOf: Designed to determine value type of input value
+ * 
+ * @param { value } any: The value which to evaulate
+ */
+
+function typeOf(value) {
+    if (Array.isArray(value)) {
+        return "array";
+    } else if (value === null) {
+        return "null";
+    } else {
+        return typeof value;
+    }
+    
+}
+
+module.exports.typeOf = typeOf;

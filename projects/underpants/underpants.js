@@ -220,7 +220,7 @@ _.unique = function(array) {
     // use _.indexOf()
     // loop over array
     for (var i = 0; i < array.length; i++) {
-        if (_.index0f(array, array[i]) > -1) {
+        if (_.indexOf(array, array[i]) === i) {
             output.push(array[i]);
         }
     }

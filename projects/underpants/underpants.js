@@ -363,16 +363,15 @@ _.map = function(collection, func) {
 */
 
 _.pluck = function(array, prop) {
-    // output array
-    let output = [];
-    // return array containing value of prop for every element in array
-    // use map function
-    // loop over array
+
+    // // return array containing value of prop for every element in array
+    // // use map function
+    // // loop over array
     for (let i = 0; i < array.length; i++) {
-        output.push(_.map(array[i], function() {
+         return _.map(array[i], function() {
             return array[i][prop];
-        }));
-    }
+         });
+        }
 
 };
 

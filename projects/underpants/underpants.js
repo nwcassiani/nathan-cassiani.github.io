@@ -367,11 +367,14 @@ _.pluck = function(array, prop) {
     // return array containing value of prop for every element in array
     // use map function, map function returns an array
     // loop over array
-    for (let i = 0; i < array.length; i++) {
-        return _.map(array[i], function(){
-            return array[i][prop];
-         });
-        }
+    // for (let i = 0; i < array.length; i++) {
+    //     return _.map(array[i], function(){
+    //         return array[i][prop];
+    //      });
+    //     }
+    return _.map(array, function(array){
+        return array[prop];
+    });
 
 };
 

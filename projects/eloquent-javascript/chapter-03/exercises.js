@@ -33,7 +33,18 @@ function isEven(num) {
 // countChars //////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function countChars() {
+function countChars(string, char) {
+    // init sum variable
+    let sum = 0;
+    // takes a string as an argument and returns how many chars are in string
+    // loop over string and compare [i] with char
+    for (let i = 0; i < string.length; i++) {
+      if (string[i] === char) {
+        sum += 1;
+      }
+    }
+    // return sum
+    return sum;
 
 }
 

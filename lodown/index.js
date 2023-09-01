@@ -131,7 +131,7 @@ module.exports.unique = unique;
  * a new array for which the function returned true.
  * 
  * @param {Array} array: The array over which to iterate.
- * @param {Function} function: The Function to be applied to each value in the array
+ * @param {Function} func: The Function to be applied to each value in the array
  */
 function filter(array, func) {
     let output = [];
@@ -143,3 +143,22 @@ function filter(array, func) {
     return output;
 }
 module.exports.filter = filter;
+
+/**
+ * reject: Designed to loop over an array, applying the function to each value in the array, and returning
+ * a new array for which the function returned false.
+ * 
+ * @param {Array} array: The array over which to iterate.
+ * @param {Function} func: The Function to be applied to each value in the array
+ */
+function reject(array, func) {
+    let output = [];
+    for (var i = 0; i < array.length; i++) {
+        if (func(array[i], i, array) === false){
+            output.push(array[i]);
+        }
+    }
+    return output;
+};
+
+module.exports.reject = reject;

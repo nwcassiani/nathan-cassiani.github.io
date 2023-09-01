@@ -2,6 +2,7 @@
 
 'use strict';
 
+const { mapValues } = require('lodash');
 var customers = require('./data/customers.json');
 var _ = require('underbar');
 
@@ -22,10 +23,21 @@ var _ = require('underbar');
  */
 
 var maleCount = function(array) {
-
+    let males = _.filter(array, function(customer) {
+        return customers.gender === 'male';
+    });
+    return males.length;
 };
 
-var femaleCount;
+var femaleCount = function(array) {
+    // use reduce to return # of female customers
+    let females = _.reduce(array, function(accumulator, current){
+        if (current.gender === 'female'){
+            accumulator += 1;
+        }
+        return accumulator;
+    }, 0);
+}
 
 var oldestCustomer;
 

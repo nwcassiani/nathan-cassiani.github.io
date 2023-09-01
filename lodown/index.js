@@ -60,15 +60,29 @@ module.exports.typeOf = typeOf;
  * @param {Number} number: The number of values to return, starting from the last value of the input array
  */
 function last(array, number) {
-    // if array is not an array, return []
     if (!(Array.isArray(array)) || number < 0) {
         return [];
-        // if number is not given or NaN, return first element in array
     } else if (isNaN(number) || !number) {
         return array[array.length-1];
     } else {
-        // return last <number> elements in array
         return array.slice(-number);
     }
 }
 module.exports.last = last;
+
+/**
+ * indexOf: Designed to iterate over an array and find the index of a given value
+ * 
+ * @param {Array} array: The array over which to iterate
+ * @param {Value} value: the value to find the index of, if array contains the value
+ */
+
+function indexOf(array, value) {
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] === value) {
+            return i;
+        }
+    }
+    return -1;
+}
+module.exports.indexOf = indexOf;

@@ -37,9 +37,24 @@ var femaleCount = function(array) {
         }
         return accumulator;
     }, 0);
-}
+};
 
-var oldestCustomer;
+var oldestCustomer = function(array) {
+    // use reduce to return the oldest customer object in the array
+    let oldest = _.reduce(array, function(accumulator, current){
+        // is the current customer in the array OLDER than the accumulator
+        if (current.age > accumulator) {
+            return current.name;
+        } else {
+            return accumulator;
+        }
+            // return current
+        // else
+            // return accumulator
+    }); // NO SEED => result = array[0] // {Adele Mullin}
+    return oldest;
+    // return oldest customer's name
+};
 
 var youngestCustomer;
 
@@ -49,7 +64,19 @@ var firstLetterCount;
 
 var friendFirstLetterCount;
 
-var friendsCount;
+var friendsCount = function(array, name){
+    // use map?
+    // return an array with all the customers that have the given name in their friends list
+    var output = [];
+    // loop through array
+    for (var i = 0; i < array.length; i++){
+        if (array[i].includes(name)) {
+            output.push(array[i]);
+        }
+    }
+    return output;
+};
+
 
 var topThreeTags; // !!
 

@@ -125,3 +125,21 @@ function unique(array) {
 }
 
 module.exports.unique = unique;
+
+/**
+ * filter: Designed to loop over an array, applying the function to each value in the array, and returning
+ * a new array for which the function returned true.
+ * 
+ * @param {Array} array: The array over which to iterate.
+ * @param {Function} function: The Function to be applied to each value in the array
+ */
+function filter(array, func) {
+    let output = [];
+    for (var i = 0; i < array.length; i++) {
+        if(func(array[i], i, array) === true) {
+            output.push(array[i]);
+        }
+    }
+    return output;
+}
+module.exports.filter = filter;

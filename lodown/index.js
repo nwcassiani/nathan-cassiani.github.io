@@ -86,3 +86,42 @@ function indexOf(array, value) {
     return -1;
 }
 module.exports.indexOf = indexOf;
+
+/**
+ * contains: Designed to loop over an array and return a Boolean value depending on whether the input array
+ * contains the input value.
+ * 
+ * @param {Array} array: The array over which to iterate.
+ * @param {Value} value: the value to look for in the input array
+ */
+function contains(array, value) {
+    let check = false;
+    // loop through array
+    for (var i = 0; i < array.length; i++) {
+        // use ternary operator
+        check = array[i] === value ? true : check;
+    }
+    return check;
+}
+module.exports.contains = contains;
+
+/**
+ * unique: Designed to loop over an array, and applies the 
+ * index0f function to find first instance of an element from the input array, and return a new array without
+ * any duplicate values.
+ * 
+ * @param {Array} array: The array over which to iterate.
+ */
+
+function unique(array) {
+    let output = [];
+    for (var i = 0; i < array.length; i++) {
+        if (_.indexOf(array, array[i]) === i) {
+            output.push(array[i]);
+        }
+    }
+
+    return output;
+}
+
+module.exports.unique = unique;

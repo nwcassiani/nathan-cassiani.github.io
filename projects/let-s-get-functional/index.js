@@ -16,6 +16,7 @@ var _ = require('underbar');
  * 3. We started the first one for you as an example! Make the rest in that style.
  *
  * 4. To test your work, run the following command in your terminal:
+ *      type => cd ..
  *
  *    npm start --prefix ./nathan-cassiani.github.io/projects/let-s-get-functional
  *
@@ -24,7 +25,7 @@ var _ = require('underbar');
 
 var maleCount = function(array) {
     let males = _.filter(array, function(customer) {
-        return customers.gender === 'male';
+        return customer.gender === 'male';
     });
     return males.length;
 };
@@ -37,6 +38,8 @@ var femaleCount = function(array) {
         }
         return accumulator;
     }, 0);
+
+    return females;
 };
 
 var oldestCustomer = function(array) {

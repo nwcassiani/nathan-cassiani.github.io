@@ -146,7 +146,7 @@ module.exports.filter = filter;
 
 /**
  * reject: Designed to loop over an array, applying the function to each value in the array, and returning
- * a new array for which the function returned false.
+ * a new array of elements for which the function returned false.
  * 
  * @param {Array} array: The array over which to iterate.
  * @param {Function} func: The Function to be applied to each value in the array
@@ -162,3 +162,67 @@ function reject(array, func) {
 };
 
 module.exports.reject = reject;
+
+/**
+ * partition: Designed to loop over an array, apply the function to each element in the array, and return an
+ * array with 2 nested arrays: one for truthy values, and one for falsey values
+ * 
+ * @param {Array} array: The collection over which to iterate.
+ * @param {Function} func: The Function to be applied to each value in the 
+ * array
+ */
+function partition(array, func) {
+    // truthy output array
+    let truArr = [];
+    let falseArr = [];
+    // call func for each element in array
+    for (var i = 0; i < array.length; i++) {
+        if (func(array[i], i, array) === true) {
+            truArr.push(array[i]);
+        } else if (func(array[i], i, array) === false) {
+            falseArr.push(array[i]);
+        }
+    }
+    // return array made up of an array with all truthy values, and an array of falsey values
+    return [truArr, falseArr];
+}
+module.exports.partition = partition;
+
+/**
+ * map: Designed to loop over a collection, Array or Object, and applies the 
+ * Function to each value in the collection, saving the return value of each function call in a new array.
+ * 
+ * @param {Array or Object} collection: The collection over which to iterate.
+ * @param {Function} action: The Function to be applied to each value in the 
+ * collection
+ */
+function map(collection, func) {
+    let output = [];
+    if(Array.isArray(collection)) {
+        for (var i = 0; i < collection.length; i++) {
+            output.push(func(collection[i], i, collection));
+        }
+    } else if (typeof collection === 'object'){ 
+        for (var key in collection) {
+            output.push(func(collection[key], key, collection))
+        }
+    }
+    return output;
+}
+module.exports.map = map;
+
+/**
+ * pluck: Designed to loop over an array, and applies the map function to the array to find the value stored
+ * at the input prop for each element in the array.
+ * 
+ * @param {Array} array: The collection over which to iterate.
+ * @param {Property} prop: The property from which to return value to the output array
+ */
+function pluck(array, prop) {
+    return _.map(array, function(array){
+        return array[prop];
+    });
+
+}
+module.exports.pluck = pluck;
+

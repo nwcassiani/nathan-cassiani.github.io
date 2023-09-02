@@ -226,3 +226,47 @@ function pluck(array, prop) {
 }
 module.exports.pluck = pluck;
 
+/**
+ * every: Designed to loop over a collection, Array or Object, and applies the 
+ * Function to each value in the collection to return true when function returns true for every element in 
+ * input collection
+ * 
+ * @param {Array or Object} collection: The collection over which to iterate.
+ * @param {Function} func: The Function to be applied to each value in the 
+ * collection
+ */
+function every(collection, func) {
+    if (Array.isArray(collection)) {
+        if (func === undefined) {
+            for (let i = 0; i < collection.length; i++) {
+                if (collection[i] === false) {
+                    return false; 
+                }
+            }
+            return true; 
+        } else {
+            for (var i = 0; i < collection.length; i++) {
+                if (func(collection[i], i, collection) === false) {
+                    return false; 
+                } 
+            }
+        }
+    
+    } else if (typeof collection === 'object') {
+        if (func === undefined) {
+            for (var key in collection) {
+                if (collection[key] === false) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        for (var key in collection) {
+            if(func(collection[key], key, collection) === false) {
+                return false;
+            }
+        }
+    }
+     return true;
+}
+module.exports.every = every;

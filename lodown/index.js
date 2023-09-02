@@ -270,3 +270,93 @@ function every(collection, func) {
      return true;
 }
 module.exports.every = every;
+
+/**
+ * some: Designed to loop over a collection, Array or Object, and applies the 
+ * Function to each value in the collection to return true when function returns true for just one element in 
+ * input collection
+ * 
+ * @param {Array or Object} collection: The collection over which to iterate.
+ * @param {Function} func: The Function to be applied to each value in the 
+ * collection
+ */
+function some(collection, func) {
+    if (Array.isArray(collection)) {
+        if (func === undefined) {
+            for (let i = 0; i < collection.length; i++){
+                if (collection[i] === true) {
+                    return true;
+                }
+            }
+            return false;
+        } else {
+            for (var i = 0; i < collection.length; i++) {
+                if (func(collection[i], i, collection) === true) {
+                    return true; 
+                }
+            }
+            return false;
+        }
+    } else if (typeof collection === 'object') {
+        if (func === undefined) {
+            for (var key in collection) {
+                if (collection[key] === true) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        for (var key in collection) {
+            if(func(collection[key], key, collection) === true) {
+                return true;
+            }
+        }
+    }
+     return false;
+
+}
+module.exports.some = some;
+
+/**
+ * reduce: Designed to loop over an array and applies the 
+ * function to each value in the collection, and returns a single value of the accumulated result.
+ * 
+ * @param {Array} array: The collection over which to iterate.
+ * @param {Function} func: The Function to be applied to each value in the 
+ * collection
+ * @param {Number} seed: 
+ */
+function reduce(array, func, seed) {
+    let result;
+    if (seed === undefined){
+        result = array[0];
+        for (let i = 1; i < array.length; i++) {
+            result = func(result, array[i], i);
+        }
+    } else { 
+        result = seed;
+        for (let i = 0; i < array.length; i++) {
+            result = func(result, array[i], i); 
+        }
+    }
+    return result;
+}
+module.exports.reduce = reduce;
+
+/**
+ * extend: Designed to copy a second objects or more objects properties into the initial input object.
+ * 
+ * @param {Object} obj1: The initial input object to be copied into
+ * @param {Object} obj2: The object to copy from into the initial input object
+ * @param {Object} moreObjs: Any subsequent objects to copy properties from into the initial input object
+ */
+function extend(obj1, obj2, ...moreObjs) {
+    Object.assign(obj1, obj2);
+    const args = [...moreObjs];
+    for (let i = 0; i < args.length; i++) {
+        Object.assign(obj1, args[i]);
+    }
+    return obj1;
+
+}
+module.exports.extend = extend;

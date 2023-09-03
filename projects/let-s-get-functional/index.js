@@ -57,24 +57,56 @@ var oldestCustomer = function(array) {
     }); // NO SEED => result = array[0] // {Adele Mullin}
     return oldest;
     // return oldest customer's name
+
 };
 
-var youngestCustomer;
+var youngestCustomer = function(array){
+    // loop through array
+    // find youngest customers age
+    // return name of that customer
+
+};
 
 var averageBalance; // skip til next week
 
-var firstLetterCount;
+var firstLetterCount = function(array, letter){
+    // loop through array
+    // if array[i].name[0] === letter, push name to storage array
+    // return storage array.length
+    // init storage array
+    let storage = [];
+    for (let i = 0; i < array.length; i++){
+        if (array[i].name[0].toLowerCase() === letter.toLowerCase()){
+            storage.push(array[i].name);
+        }
+    }
+    return storage.length;
+};
 
-var friendFirstLetterCount;
+
+var friendFirstLetterCount = function(array, customer, letter){
+    // loop through array
+    // 
+    // return storage array.length
+    // init storage array
+    let storage = [];
+    for (let i = 0; i < array.length; i++){
+        if (array[i].name[0].toLowerCase() === letter.toLowerCase()){
+            storage.push(array[i].name);
+        }
+    }
+    return storage.length;
+};
 
 var friendsCount = function(array, name){
     // use map?
     // return an array with all the customers that have the given name in their friends list
+    // friends is an array of objects, which have a friends key
     var output = [];
     // loop through array
     for (var i = 0; i < array.length; i++){
-        if (array[i].includes(name)) {
-            output.push(array[i]);
+        if (array[i].friends.includes(name)) {
+            output.push(array[i].name);
         }
     }
     return output;

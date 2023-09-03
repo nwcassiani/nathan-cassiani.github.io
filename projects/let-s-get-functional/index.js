@@ -46,7 +46,7 @@ var oldestCustomer = function(array) {
     // use reduce to return the oldest customer object in the array
     let oldest = _.reduce(array, function(accumulator, current){
         // is the current customer in the array OLDER than the accumulator
-        if (current.age > accumulator) {
+        if (current.age > accumulator.age) {
             return current.name;
         } else {
             return accumulator;
@@ -61,10 +61,20 @@ var oldestCustomer = function(array) {
 };
 
 var youngestCustomer = function(array){
-    // loop through array
-    // find youngest customers age
-    // return name of that customer
-
+    // use reduce to return the youngest customer object in the array
+    let youngest = _.reduce(array, function(accumulator, current){
+        // is the current customer in the array younger than the accumulator
+        if (current.age < accumulator.age) {
+            return current.name;
+        } else {
+            return accumulator;
+        }
+            // return current
+        // else
+            // return accumulator
+    }); // NO SEED => result = array[0] // {Adele Mullin}
+    return youngest;
+    // return youngest customer's name
 };
 
 var averageBalance; // skip til next week
@@ -106,7 +116,7 @@ var friendsCount = function(array, name){
     // loop through array
     for (var i = 0; i < array.length; i++){
         if (array[i].friends.includes(name)) {
-            output.push(array[i].name);
+            output.push(array[i][name]);
         }
     }
     return output;

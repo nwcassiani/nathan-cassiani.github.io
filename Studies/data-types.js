@@ -72,4 +72,24 @@ let someValue; // someValue has been declared but no value assigned
 console.log(someValue); // trying to print to console will return undefined, as a result
 
 // 8. null
-// 
+// written as a literal: null
+var none = null; // variable none is known to exist but has no type or value
+
+// 9. NaN
+// a failed number conversion will return NaN
+console.log(parseInt("blahblah")); // prints => NaN
+
+// 10. Infinity
+console.log(10 ** 1000); // prints => Infinity; trying to access any number beyond the upper limit for 
+// floating point numbers will return Infinity
+//-Infinity
+let x = -1.797693134862316E+308;
+console.log(x); // prints => -Infinity; trying to access a number that exceeds the lower limit for floating
+// point numbers will return -Infinity
+
+// 11. Simple Data Types
+let num1 = 7;
+num1 += 1;
+console.log(num1); // prints => 8; you can't change a number value, you can't change the value 7 to 8
+// Rather you can add 1 to 7 to change the value of the variable num1
+// Complex Data Types

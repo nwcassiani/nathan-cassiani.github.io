@@ -95,31 +95,24 @@ var firstLetterCount = function(array, letter){
 
 
 var friendFirstLetterCount = function(array, customer, letter){
-    // loop through array
-    // 
-    // return storage array.length
-    // init storage array
-    let storage = [];
-    for (let i = 0; i < array.length; i++){
-        if (array[i].name[0].toLowerCase() === letter.toLowerCase()){
-            storage.push(array[i].name);
-        }
-    }
-    return storage.length;
+    // use filter
+    // filter returns an array
+    // customers friends are stored in an array of objects
+    // return length of output array
 };
 
 var friendsCount = function(array, name){
-    // use map?
+    // use filter?
     // return an array with all the customers that have the given name in their friends list
     // friends is an array of objects, which have a friends key
-    var output = [];
-    // loop through array
-    for (var i = 0; i < array.length; i++){
-        if (array[i].friends.includes(name)) {
-            output.push(array[i][name]);
+    let friends = _.filter(array, function(customer){
+        for (let key in customer.friends){
+            if (customer.friends[key] === name){
+                return customer.name;
+            }
         }
-    }
-    return output;
+    });
+    return friends;
 };
 
 

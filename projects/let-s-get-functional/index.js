@@ -64,7 +64,7 @@ var youngestCustomer = function(array){
     // use reduce to return the youngest customer object in the array
     let youngest = _.reduce(array, function(accumulator, current){
         // is the current customer in the array younger than the accumulator
-        if (current.age < accumulator.age) {
+        if (accumulator.age > current.age) {
             return current.name;
         } else {
             return accumulator;
@@ -78,6 +78,7 @@ var youngestCustomer = function(array){
 };
 
 var averageBalance; // skip til next week
+    // loop through customers array, add balances together, divide by total number of customers
 
 var firstLetterCount = function(array, letter){
     // loop through array
@@ -95,10 +96,13 @@ var firstLetterCount = function(array, letter){
 
 
 var friendFirstLetterCount = function(array, customer, letter){
-    // use filter
+    // use filter?
     // filter returns an array
+    // Find how many friends of a given customer have names that start with a given letter
+    // push names of friends whose names start with given letter to output array
     // customers friends are stored in an array of objects
-    // return length of output array
+    // return number: length of output array
+
 };
 
 var friendsCount = function(array, name){
@@ -113,6 +117,7 @@ var friendsCount = function(array, name){
         }
     });
     return friends;
+
 };
 
 

@@ -54,8 +54,18 @@ var isEven = function(n) {
 // 5. Sum all integers below a given integer.
 // sumBelow(10); // 45
 // sumBelow(7); // 21
-var sumBelow = function(n) {
+var sumBelow = function(n, sum=0) {
+  // base
+  if(n === 0){
+    return sum;
+  } else if (n < 0) {
+    return sum - sumBelow(-n, sum=0);
+  } else {
+  // recursion
+  sum += n - 1;
+  }
 
+  return sumBelow(n - 1, sum)
 };
 
 // need to start with n - 1

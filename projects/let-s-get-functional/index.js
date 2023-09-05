@@ -65,7 +65,7 @@ var youngestCustomer = function(array){
     let youngest = _.reduce(array, function(accumulator, current){
         // is the current customer in the array younger than the accumulator
         if (current.age < accumulator.age) {
-            return current.name;
+            return current;
         } else {
             return accumulator;
         }
@@ -73,7 +73,7 @@ var youngestCustomer = function(array){
         // else
             // return accumulator
     }); // NO SEED => result = array[0] // {Adele Mullin}
-    return youngest;
+    return youngest.name;
     // return youngest customer's name
 };
 

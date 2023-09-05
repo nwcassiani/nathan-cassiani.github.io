@@ -47,7 +47,7 @@ var oldestCustomer = function(array) {
     let oldest = _.reduce(array, function(accumulator, current){
         // is the current customer in the array OLDER than the accumulator
         if (current.age > accumulator.age) {
-            return current.name;
+            return current;
         } else {
             return accumulator;
         }
@@ -55,7 +55,7 @@ var oldestCustomer = function(array) {
         // else
             // return accumulator
     }); // NO SEED => result = array[0] // {Adele Mullin}
-    return oldest;
+    return oldest.name;
     // return oldest customer's name
 
 };

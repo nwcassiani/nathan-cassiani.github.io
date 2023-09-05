@@ -98,11 +98,11 @@ var exponent = function(base, exp, output=1) {
   if(exp === 0){
     return output;
   } else if (exp < 0) {
-    output = output / base;
+    output /= base;
     return exponent(base, exp + 1, output)
   } else {
   // recursion
-    output = output * base;
+    output *= base;
   }
   //
   return exponent(base, exp - 1, output);
@@ -113,10 +113,17 @@ var exponent = function(base, exp, output=1) {
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
 var powerOfTwo = function(n) {
+
 };
 
 // 9. Write a function that accepts a string a reverses it.
-var reverse = function(string) {
+var reverse = function(string, output="") {
+  if(string.length === 0){
+    return output;
+  }
+  output += string[string.length - 1];
+  // recursion
+  return reverse(string.slice(0, -1), output);
 };
 
 // 10. Write a function that determines if a string is a palindrome.

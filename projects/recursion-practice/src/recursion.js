@@ -74,11 +74,16 @@ var sumBelow = function(n, sum=0) {
 // Example:  range(2, 9);  // [3, 4, 5, 6, 7, 8]
 var range = function(x, y, output=[]) {
   // base 
-  if (x === (y - 1)){
+  if (x === (y - 1) || x === (y + 1)){
     return output;
+  } else if (x == y) {
+    return [];
+  } else if (x > y) {
+    output.push(x -= 1);
+  } else if (x < y) {
+    output.push(x += 1);
   }
   // recursion
-  output.push(x += 1);
 
   return range(x, y, output);
 };

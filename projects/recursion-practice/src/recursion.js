@@ -128,6 +128,16 @@ var reverse = function(string, output="") {
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
+  // base
+  if(string.length === 0){
+    return true;
+  } else if (string[0].toLowerCase() !== string[string.length - 1].toLowerCase()){
+    return false;
+  } else if (string[0].toLowerCase() === string[string.length - 1].toLowerCase()){
+    return palindrome(string.slice(1, -1));
+  }
+  // recursion
+
 };
 
 // 11. Write a function that returns the remainder of x divided by y without using the

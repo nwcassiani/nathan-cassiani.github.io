@@ -77,8 +77,20 @@ var youngestCustomer = function(array){
     // return youngest customer's name
 };
 
-var averageBalance; // skip til next week
+var averageBalance = function(array){
+    // output number
+    let total = 0;
+    // for loop
+    for (let i = 0; i < array.length; i++){
+        // access balance value, replace chars, add to total
+        total += parseFloat(array[i].balance.replace(/[$,]/g, ""));
+    }
+    return total / array.length;
+
+    // return total divided by array.length
+}; 
     // loop through customers array, add balances together, divide by total number of customers
+    // need to remove dollar signs and commas from balance string, then can parseFloat
 
 var firstLetterCount = function(array, letter){
     // loop through array

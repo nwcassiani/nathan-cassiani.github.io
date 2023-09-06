@@ -108,18 +108,12 @@ var firstLetterCount = function(array, letter){
 
 
 var friendFirstLetterCount = function(array, customer, letter){
-    // use filter?
-    // filter returns an array
+    // use map?
+    // map returns an array
     // Find how many friends of a given customer have names that start with a given letter
     // push names of friends whose names start with given letter to output array
     // customers friends are stored in an array of objects
     // return number: length of output array
-    let friend = filter(array, function(customer){
-        if (customer.friends.name[0].toLowerCase() === letter.toLowerCase()){
-            return customer.friends.name;
-        }
-    });
-    return friend.length;
 };
 
 var friendsCount = function(array, name){

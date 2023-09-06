@@ -232,14 +232,23 @@ var buildList = function(value, length, output=[]) {
   }
   // recursion
   output.push(value);
-  
+
   return buildList(value, length - 1, output);
 };
 
 // 19. Count the occurence of a value inside a list.
 // countOccurrence([2,7,4,4,1,4], 4) // 3
 // countOccurrence([2,'banana',4,4,1,'banana'], 'banana') // 2
-var countOccurrence = function(array, value) {
+var countOccurrence = function(array, value, total=0) {
+  // base
+  if (array.length === 0){
+    return total;
+  }
+  if (array[0] === value){
+    total += 1;
+  }
+  // recursion
+  return countOccurrence(array.slice(1), value, total);
 };
 
 // 20. Write a recursive version of map.

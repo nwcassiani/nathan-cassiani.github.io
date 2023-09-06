@@ -117,7 +117,8 @@ var friendFirstLetterCount = function(array, customer, letter){
     // loop through array
     for (let i = 0; i < array.length; i++){
         if(array[i].name === customer){
-            let friendsOf = array[i].friends;
+            if(array[i].friends.name[0].toLowerCase() === letter.toLowerCase());
+                output.push(array[i].friends.name);
         }
     }
     // access friends names, compare first char with letter

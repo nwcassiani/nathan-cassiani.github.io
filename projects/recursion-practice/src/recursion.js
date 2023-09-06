@@ -135,13 +135,14 @@ var reverse = function(string, output="") {
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
+  let str = string.replace(/ /g, "");
   // base
-  if(string.length === 0){
+  if(str.length === 0 || str.length === 1){
     return true;
-  } else if (string[0].toLowerCase() !== string[string.length - 1].toLowerCase()){
+  } else if (str[0].toLowerCase() !== str[str.length - 1].toLowerCase()){
     return false;
-  } else if (string[0].toLowerCase() === string[string.length - 1].toLowerCase()){
-    return palindrome(string.slice(1, -1));
+  } else if (str[0].toLowerCase() === str[str.length - 1].toLowerCase()){
+    return palindrome(str.slice(1, -1));
   }
   // recursion
 

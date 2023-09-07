@@ -58,12 +58,8 @@ function reverseArray(array) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function reverseArrayInPlace(array) {
-  // // for loop
-  // let num = array.length;
-  // for (let i = array.length - 1; i >= 0; i--){
-  //   array.push(array[i]);
-  // }
-  // return array.slice(num - 1);
+  // 
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////

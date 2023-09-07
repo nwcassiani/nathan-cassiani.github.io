@@ -131,18 +131,17 @@ var friendFirstLetterCount = function(array, customer, letter){
 };
 
 var friendsCount = function(array, name){
-    // use filter?
-    // return an array with all the customers that have the given name in their friends list
-    // friends is an array of objects, which have a friends key
-    let friends = _.filter(array, function(customer){
-        for (let key in customer.friends){
-            if (customer.friends[key] === name){
-                return customer.name;
-            }
+    // use reduce?
+    // return an array
+    // Find the customers' names that have a given customer's name in their friends list
+    let friendsWith = _.reduce(array, function(acc, current){
+        // acc = []
+        if(current.friends.includes(name)){
+            acc.push(current.name);
         }
-    });
-    return friends;
-
+        return acc;
+    }, []);
+    return friendsWith;
 };
 
 

@@ -148,7 +148,23 @@ var friendsCount = function(array, name){
 
 var topThreeTags; // !!
 
-var genderCount; // !!
+var genderCount = function(array){
+    // want to return an obj
+    // use reduce with empty obj as seed
+    let genderObj = _.reduce(array, function(acc, current){
+        // acc = {}
+        // determine if current gender already exists as akey
+        if (acc[current.gender] === undefined){
+            acc[current.gender] = 1;
+        } else {
+            acc[current.gender] += 1;
+        }
+    return acc;
+
+    }, {});
+
+    return genderObj;
+}; // !!
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////

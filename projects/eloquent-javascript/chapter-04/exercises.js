@@ -2,16 +2,26 @@
 // range ///////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function range(start, end) {
+function range(start, end, step = start < end ? 1 : -1) {
   // outputs an array from start to end, inclusive
   // output array
   let output = [];
+  // if start and end are equal return empty array
   if (start == end) {
     return output;
   }
-  for (let i = start; i <= end; i++){
-    output.push(i);
+  // if step is positive
+  if (step > 0){
+    for (let i = start; i <= end; i += step){
+      output.push(i);
+  } 
+  // if step is negative
+  if (step < 0){
+    for (let i = start;i >= end; i += step){
+      output.push(i);
+    }
   }
+}
   return output;
 
 }
@@ -60,7 +70,12 @@ function reverseArrayInPlace(array) {
 // arrayToList /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function arrayToList() {
+function arrayToList(array) {
+  // builds up an object list structure from input array
+  // output object
+  let listObj = {};
+  // for loop through array
+
 
 }
 

@@ -103,7 +103,9 @@ function listToArray(list, array=[]) {
 // prepend /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function prepend() {
+function prepend(value, list) {
+  // returns a new list that adds the element to the front of the input list
+  return {value, rest: list};
 
 }
 
@@ -111,7 +113,16 @@ function prepend() {
 // nth /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function nth() {
+function nth(list, num) {
+  // if element doesn't exist
+  // base
+  if (num === 0){
+    return list.value;
+  }
+    // recursion
+
+  return nth(list.rest, num - 1)
+
 
 }
 

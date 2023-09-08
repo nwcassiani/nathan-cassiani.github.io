@@ -58,7 +58,12 @@ function reverseArray(array) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function reverseArrayInPlace(array) {
-  // 
+  // loop over array
+  for (var i = array.length - 1; i >= 0; i--){
+    var reversed = array[i];
+  }
+  array = reversed;
+  return array;
 
 }
 
@@ -67,10 +72,13 @@ function reverseArrayInPlace(array) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function arrayToList(array) {
-  // builds up an object list structure from input array
-  // output object
-  let listObj = {};
-  // for loop through array
+  let rest = null;
+  // loop over array in reverse
+  for (let i = array.length - 1; i >= 0; i--){
+    rest = {value: array[i], rest: rest};
+  }
+  // return rest
+  return rest;
 
 
 }

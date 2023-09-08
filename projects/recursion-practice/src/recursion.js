@@ -400,12 +400,12 @@ var minimizeZeroes = function(array, output=[]) {
   // recursion
   if (output.length === 0){
     output.push(array[0]);
-  } else if (output.length - 1 !== 0){
+  } else if (output[output.length - 1] !== 0){
     output.push(array[0]);
-  } else if (output.length - 1 === 0 && array[0] !== 0){
+  } else if (output[output.length - 1] === 0 && array[0] !== 0){
     output.push(array[0]);
   }
-  return minimizeZeroes(array.slice(0), output)
+  return minimizeZeroes(array.slice(1), output)
 };
 
 // 34. Alternate the numbers in an array between positive and negative regardless of

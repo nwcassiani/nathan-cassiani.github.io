@@ -162,6 +162,11 @@ var modulo = function(x, y) {
 var multiply = function(x, y, total=0) {
   if (x === 0 || y === 0){
     return total;
+  } else if (x < 0 && y < 0){
+    return multiply(-x, -y, total);
+  } else if (x > 0 && y < 0){
+    total -= x;
+    return multiply(x, y + 1, total);
   } else {
     total += x;
   }

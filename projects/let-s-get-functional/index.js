@@ -134,18 +134,23 @@ var friendsCount = function(array, name){
     // use reduce?
     // return an array
     // Find the customers' names that have a given customer's name in their friends list
-    let friendsWith = _.reduce(array, function(acc, current){
-        // acc = []
-        if(current.friends.includes(name)){
-            acc.push(current.name);
+    var output = [];
+    for(var i = 0; i < array.length; i++){
+      for(var j = 0; j < array[i].friends.length; j++){
+        if(Object.values(array[i].friends[j]).includes(name)){
+          output.push(array[i].name);
         }
-        return acc;
-    }, []);
-    return friendsWith;
+      }
+    }
+  return output;
+      
 };
 
 
-var topThreeTags; // !!
+var topThreeTags = function(array){
+    // Find the three most common tags among all customers' associated tags
+    // output an array with top three tags
+}; 
 
 var genderCount = function(array){
     // want to return an obj

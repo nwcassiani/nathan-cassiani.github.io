@@ -305,7 +305,12 @@ var nthFibo = function(n) {
   if (n < 0){
     return null;
   } 
+  if (n === 1){
+    return 1;
+  }
   // recursion
+
+  return nthFibo(n - 1) + nthFibo(n - 2);
 };
 
 // 26. Given an array of words, return a new array containing each word capitalized.

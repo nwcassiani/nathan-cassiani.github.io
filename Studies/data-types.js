@@ -90,6 +90,18 @@ console.log(x); // prints => -Infinity; trying to access a number that exceeds t
 // 11. Simple Data Types
 let num1 = 7;
 num1 += 1;
-console.log(num1); // prints => 8; you can't change a number value, you can't change the value 7 to 8
-// Rather you can add 1 to 7 to change the value of the variable num1
+console.log(num1); // prints => 8; you can't change a number value; you can't change the value 7 to the value 8
+// Rather, you can add 1 to 7 to change the value of the variable num1
+let num2 = num1;
+num2 -= 1;
+console.log(num1); // still prints => 8; while the value stored in num1 was copied into num2, changing the value
+// of num2 will not affect the value stored in num1;
 // Complex Data Types
+var obj1 = { one: "hello"};
+var obj2 = obj1; // value stored in obj2 is a reference to the value stored in obj1 ,they both point to same object
+obj2.one = "hello world";
+console.log(obj1); // prints => { one: 'hello world' }
+// changing the value at obj2 changes obj1 because obj2 points to the reference in memory where obj1 is stored
+// obj1 === obj2
+
+

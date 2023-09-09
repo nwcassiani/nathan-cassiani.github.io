@@ -150,6 +150,10 @@ var friendsCount = function(array, name){
 var topThreeTags = function(array){
     // Find the three most common tags among all customers' associated tags
     // output an array with top three tags
+    // customers is an array of objects
+    // each customer obj has a key called tags with an array of tags
+    // loop through customers and push values from tags into output array
+    
 }; 
 
 var genderCount = function(array){

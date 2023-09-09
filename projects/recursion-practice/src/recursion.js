@@ -431,30 +431,30 @@ var numToText = function(str, output="") {
   if (str.length === 0){
     return output;
   }
-  if(str[0] === 0){
-    str[0] = "zero";
-  } else if(str[0] === 1){
-    str[0] = "one";
-  } else if(str[0] === 2){
-    str[0] = "two";
-  } else if(str[0] === 3){
-    str[0] = "three";
-  } else if(str[0] === 4){
-    str[0] = "four";
-  } else if(str[0] === 5){
-    str[0] = "five";
-  } else if(str[0] === 6){
-    str[0] = "six";
-  } else if(str[0] === 7){
-    str[0] = "seven";
-  } else if(str[0] === 8){
-    str[0] = "eight";
-  } else if(str[0] === 9){
-    str[0] = "nine";
-  }
+  if(str[0] === "0"){
+    output += "zero";
+  } else if(str[0] === "1"){
+    output += "one";
+  } else if(str[0] === "2"){
+    output += "two";
+  } else if(str[0] === "3"){
+    output += "three";
+  } else if(str[0] === "4"){
+    output += "four";
+  } else if(str[0] === "5"){
+    output += "five";
+  } else if(str[0] === "6"){
+    output += "six";
+  } else if(str[0] === "7"){
+    output += "seven";
+  } else if(str[0] === "8"){
+    output += "eight";
+  } else if(str[0] === "9"){
+    output += "nine";
+  } else {
   // recursion
   output += str[0];
-
+  }
   return numToText(str.slice(1), output)
 };
 

@@ -58,11 +58,17 @@ function reverseArray(array) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function reverseArrayInPlace(array) {
-  // loop over array
-  for (var i = array.length - 1; i >= 0; i--){
-    var reversed = array[i];
+  // loop over half of array, using math floor to round down
+  for (var i = 0; i < Math.floor(array.length / 2); i++){
+    // example array = [1, 2, 3, 4, 5]
+    // on first iteration temp = 1
+    var temp = array[i];
+    // 1 = 5 
+    array[i] = array[array.length - 1 - i];
+    // 5 = 1
+    array[array.length - 1 - i] = temp;
   }
-  array = reversed;
+
   return array;
 
 }

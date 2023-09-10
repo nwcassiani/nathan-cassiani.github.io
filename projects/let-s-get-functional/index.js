@@ -152,15 +152,15 @@ var topThreeTags = function(array){
     // output an array with top three tags
     // customers is an array of objects
     // each customer obj has a key called tags with an array of tags
-    // loop through customers and push values from tags into output array
+    // init array for tags
     let tagList = [];
-  
+    // loop through customers and push values from tags into tagList array
     for (let i = 0; i < array.length; i++){
       for(let j = 0; j < array[i].tags.length; j++){
         tagList.push(array[i].tags[j]);
       }
     }
-  
+    // create object with all tags as keys and number of occurences as values
     let tagObj = tagList.reduce(function(acc, current){
       // acc = {}
       if(acc[current] === undefined){
@@ -170,12 +170,13 @@ var topThreeTags = function(array){
       }
       return acc;
     }, {});
-  
+  // how to sort in order of occurence?
   for (var key in tagObj){
     if (tagObj[key] === 1){
       delete tagObj[key];
     }
   }
+
   return Object.keys(tagObj).slice(-3);
     
 }; 

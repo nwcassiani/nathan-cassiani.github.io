@@ -120,7 +120,10 @@ function prepend(value, list) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function nth(list, num) {
-  // if element doesn't exist
+  // if element doesn't exist, or if num is "longer" than list?
+  if(!list){
+    return undefined;
+  }
   // base
   if (num === 0){
     return list.value;

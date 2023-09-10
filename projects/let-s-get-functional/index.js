@@ -153,6 +153,30 @@ var topThreeTags = function(array){
     // customers is an array of objects
     // each customer obj has a key called tags with an array of tags
     // loop through customers and push values from tags into output array
+    let tagList = [];
+  
+    for (let i = 0; i < array.length; i++){
+      for(let j = 0; j < array[i].tags.length; j++){
+        tagList.push(array[i].tags[j]);
+      }
+    }
+  
+    let tagObj = tagList.reduce(function(acc, current){
+      // acc = {}
+      if(acc[current] === undefined){
+        acc[current] = 1;
+      } else {
+        acc[current] += 1;
+      }
+      return acc;
+    }, {});
+  
+  for (var key in tagObj){
+    if (tagObj[key] === 1){
+      delete tagObj[key];
+    }
+  }
+  return Object.keys(tagObj).slice(-3);
     
 }; 
 

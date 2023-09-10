@@ -139,7 +139,18 @@ function nth(list, num) {
 // deepEqual ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function deepEqual() {
+function deepEqual(val1, val2) {
+  // root out null values
+  // root out arrays
+  // deep comparison of objects?
+  if(val1 === null & val2 === null){
+    return true;
+  } else if (Array.isArray(val1) && Array.isArray(val2) && val1 === val2){
+    return true;
+  }
+  if(val1 === val2){
+    return true;
+  }
 
 }
 

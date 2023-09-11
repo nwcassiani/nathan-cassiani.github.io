@@ -171,13 +171,12 @@ var topThreeTags = function(array){
       return acc;
     }, {});
   // how to sort in order of occurence?
-  for (var key in tagObj){
-    if (tagObj[key] === 1){
-      delete tagObj[key];
-    }
-  }
-
-  return Object.keys(tagObj).slice(-3);
+  // sort from least to most
+  var keysByCount = Object.keys(tagObj).sort(function(a, b){
+    return tagObj[a]-tagObj[b];
+    });
+    // slice off last three or top three
+    return keysByCount.slice(-3);
     
 }; 
 

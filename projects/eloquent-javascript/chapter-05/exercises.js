@@ -2,7 +2,12 @@
 // flatten /////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function flatten() {
+function flatten(array) {
+  // use reduce to access nested arrays
+  return array.reduce(function(acc, current){
+    // acc = []
+    return acc.concat(current);
+  }, []);
 
 }
 

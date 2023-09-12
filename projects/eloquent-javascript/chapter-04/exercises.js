@@ -139,18 +139,32 @@ function nth(list, num) {
 // deepEqual ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function deepEqual(val1, val2) {
+function deepEqual(x, y) {
   // root out null values
   // root out arrays
   // deep comparison of objects?
-  if(val1 === null & val2 === null){
-    return true;
-  } else if (Array.isArray(val1) && Array.isArray(val2) && val1 === val2){
-    return true;
+  // first deal with non objects
+  if (typeof x !== 'object' && typeof y !== 'object'){
+    return x === y;
   }
-  if(val1 === val2){
-    return true;
+  // determine if x OR y is not an object
+  if(typeof x !== 'object' || typeof y !== 'object'){
+    return false;
   }
+  // create arrays of each input's keys
+  let xKeys = Object.keys(x);
+  let yKeys = Object.keys(y);
+  // determine if you're dealing with objs with different properties
+  if(xKeys.length !== yKeys.length){
+    return false;
+  }
+  // iterate to determine if array keys match and values at keys match
+  for(let i = 0; i < xKeys.length; i++){
+    if(!yKeys.includes(xKeys[i]) || !deepEqual(x[xKeys[i]], y[xKeys[i]])){
+      return false;
+    }
+  }
+  return true;
 
 }
 

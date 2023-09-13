@@ -19,7 +19,7 @@ while(count < 10){ // (condition) while true, following code will execute
   count++; // how much our code will increment each iteration, here by 1
 }
 
-// For loops
+// for Loops
 // following code produces same results as while loop above
 //      start   stop    increment
 for (let i = 0; i < 10; i++){

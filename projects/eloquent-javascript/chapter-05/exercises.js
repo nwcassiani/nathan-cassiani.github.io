@@ -15,10 +15,11 @@ function flatten(array) {
 // loop ////////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-function loop(start, test, update, body) {
-  // using for loop 
-  let value = start;
-  for (value; test(value); value = update(value)){
+function loop(value, test, update, body) {
+  // start condition = value
+  let start = value;
+  // for loop
+  for (start; test(value); value = update(value)){
     // pass value through body function
     body(value);
   }

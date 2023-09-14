@@ -23,9 +23,34 @@ while(count < 10){ // (condition) while true, following code will execute
 // following code produces same results as while loop above
 //      start   stop    increment
 for (let i = 0; i < 10; i++){
-    console.log(i); // code to execute
+    console.log(i); // code to execute; will print => 0 1 2 3 4 5 6 7 8 9 
 }
 // we can decrement instead of increment, and change the amount by which we increment/decrement
+// here the start value is the upper limit, and stopping point is 0
 for (let i = 10; i >= 0; i -= 2){
     console.log(i); // will print => 10 8 6 4 2 0 to console
 }
+
+// We can use for loops to iterate over arrays
+let arr = [1, 2, 3, 4, 5];
+for (let i = arr.length - 1; i >= 0; i--){ // starting point needs to be array.length - 1 
+  console.log(arr[i]); // prints => 5 4 3 2 1
+}
+for (let i = 0; i < arr.length; i++){ // stop value needs to be < arr.length or <= arr.length - 1
+  console.log(arr[i]); // prints => 1 2 3 4 5
+}
+
+// For in Loops: Looping over an object
+const obj = { a: 1, b: 2, c: 3 };
+/*
+for (variable in object){
+  statement
+}
+variable: receives a string property name on each iteration 
+object: the object to be iterated over
+statement: statement to be executed on each iteration
+*/
+for (let key in obj){
+  console.log(key); // prints keys
+  console.log(obj[key]); // prints values
+} // prints => a 1 b 2 c 3 

@@ -59,4 +59,12 @@ function sayHi(){ // this function takes no inputs
 
 sayHi(); // calling the function will print "Hi!" to the console
 
-// 6. 
+// 6. Scope
+var myNum = 30;
+
+function changeNum(){
+    myNum += 1;
+}
+
+changeNum(); // invoking the function will reassign value of myNum
+console.log(myNum); // prints => 31

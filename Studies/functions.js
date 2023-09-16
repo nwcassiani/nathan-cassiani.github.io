@@ -16,8 +16,47 @@
  * 4. To assign a function to a variable, called a function expression, we declare a variable with keyword and name 
  * and assign to it the value of a function defintion. Since the name of the variable is the name of the function,
  * here the name is not include between the keyword function and parameters in parenthesis.
- * 5. How do we specify inputs and outputs? both are optional
+ * 5. We specify our functions inputs as the functions parameters. Functions can optionally take inputs. Our
+ * functions' output is determined by what our function returns. Once again this is optional.
  * 6. Functions can see and modify variables in parent or global scope. However outer scoped variables cannot do the 
  * same to variables in inner scopes.
  * 7. Closures
  */
+
+// 1. Declaration
+function add(x, y){
+    return x + y;
+}
+
+// Invocation
+add(1, 2); 
+
+// 2. Parameters & Arguments
+function add(x, y){ // x and y are the parameters
+    return x + y; 
+}
+add(2, 3); // 2 and 3 are the arguments
+
+// 3. Named function syntax
+function add(x, y){ // function keyword, followed by function name, followed by parameters in parenthesis, curly brace
+    return x + y; // code block to execute, output to return
+} // closed curly brace
+
+// 4. Function expression
+
+const subtract = function(x, y){ // like a regular variable declaration and assignment, but assigned to a function declaration
+    return x - y; // code to execute
+}; // semicolon after closed curly brace
+
+// 5. Inputs and Outputs
+function add(x, y){ // this function takes two inputs
+    return x + y; // and returns the sum of the two inputs
+} // the return keyword will explicitly return the value to the right of it
+
+function sayHi(){ // this function takes no inputs
+    console.log("Hi!"); // this function returns no value
+}
+
+sayHi(); // calling the function will print "Hi!" to the console
+
+// 6. 

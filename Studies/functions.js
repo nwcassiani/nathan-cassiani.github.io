@@ -60,11 +60,20 @@ function sayHi(){ // this function takes no inputs
 sayHi(); // calling the function will print "Hi!" to the console
 
 // 6. Scope
-var myNum = 30;
+var myNum = 30; // declared in global scope
 
 function changeNum(){
-    myNum += 1;
+    myNum += 1; // can access outer scoped variables
 }
 
 changeNum(); // invoking the function will reassign value of myNum
 console.log(myNum); // prints => 31
+
+function logThis(){
+    var x = "this"; // variable declared in function scope
+    console.log(x);
+}
+
+logThis(); // invoking function will print "this" to console
+console.log(x); // this will print Reference Error: x is not defined. x is only available inside the function it is declared in
+

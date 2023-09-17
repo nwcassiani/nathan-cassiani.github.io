@@ -20,7 +20,9 @@
  * functions' output is determined by what our function returns. Once again this is optional.
  * 6. Functions can see and modify variables in parent or global scope. However outer scoped variables cannot do the 
  * same to variables in inner scopes.
- * 7. Closures
+ * 7. A closure is when a function references variables from an outer scope and keeps them alive. Nested functions,
+ * or functions within functions, form a closure: the inner function can use the arguments and variables of the outer
+ * function, while the outer function cannot use the arguments and variables of the inner function.
  */
 
 // 1. Declaration
@@ -69,6 +71,7 @@ function changeNum(){
 changeNum(); // invoking the function will reassign value of myNum
 console.log(myNum); // prints => 31
 
+// Variables declared within a function have local scope, cannot be accessed directly in global scope
 function logThis(){
     var x = "this"; // variable declared in function scope
     console.log(x);
@@ -77,3 +80,24 @@ function logThis(){
 logThis(); // invoking function will print "this" to console
 console.log(x); // this will print Reference Error: x is not defined. x is only available inside the function it is declared in
 
+// 7. Closure
+function sayHello(){
+    function waveGoodbye(){
+        var bye = "Goodbye"; // variable defined inside nested function
+    }
+    waveGoodbye();
+    console.log(bye); // will not be able to access bye in this scope
+}
+
+sayHello(); // throws Reference Error: bye is not defined
+
+function sayHi(){
+    var greeting = "Hi";
+    function waveGoodbye(){
+        greeting = "Goodbye"; // can access outer scoped variable greeting
+    }
+    waveGoodbye(); // invoking inner function will reassign value to greeting
+    console.log(greeting); // prints value to console upon invocation of sayHi
+}
+
+sayHi(); // prints => Goodbye

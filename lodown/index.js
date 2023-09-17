@@ -96,9 +96,7 @@ module.exports.indexOf = indexOf;
  */
 function contains(array, value) {
     let check = false;
-    // loop through array
     for (var i = 0; i < array.length; i++) {
-        // use ternary operator
         check = array[i] === value ? true : check;
     }
     return check;
@@ -172,10 +170,8 @@ module.exports.reject = reject;
  * array
  */
 function partition(array, func) {
-    // truthy output array
     let truArr = [];
     let falseArr = [];
-    // call func for each element in array
     for (var i = 0; i < array.length; i++) {
         if (func(array[i], i, array) === true) {
             truArr.push(array[i]);
@@ -183,7 +179,6 @@ function partition(array, func) {
             falseArr.push(array[i]);
         }
     }
-    // return array made up of an array with all truthy values, and an array of falsey values
     return [truArr, falseArr];
 }
 module.exports.partition = partition;

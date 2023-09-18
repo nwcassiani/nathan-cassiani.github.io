@@ -12,9 +12,9 @@
  * It is a type of object, and is therefore a complex data type.
  * 5. An object is a collection of key/value pairs, called properties, stored inside curly braces. The values
  * in an object are stored at specific keys.
- * 6. A function is a set of statements that performs a task or calculates a value. A function must take 
+ * 6. A function is a set of statements that performs a task or calculates a value. A function should take 
  * some sort of input and return some output, with some type of relationship between the input and output.
- * 7. undefined refers to a value that has no value, or not initialized.
+ * 7. undefined refers to a value that has no value, or is not initialized.
  * 8. The null data type refers to a value that is intentionally nullified by the programmer, and has one
  * value: null. <null> indicates the absence of an object, as opposed to the absence of a value.
  * 9. NaN refers to not-a-number. It is a special kind of number value that's typically encountered when the 
@@ -28,11 +28,11 @@
  * 
  * 12. Primitive data types are copied by value; they are copied from one variable to the next when
  * assigning or passing. Complex data types are copied by reference; they are passed by reference when 
- * assigning or passing
+ * assigning or passing.
  */
 
 // 1. Number
-// Numbers are commonly represent in literal form
+// Numbers are commonly represented in literal form
 let num = 19; // nineteen
 
 // 2. String
@@ -87,7 +87,7 @@ let x = -1.797693134862316E+308;
 console.log(x); // prints => -Infinity; trying to access a number that exceeds the lower limit for floating
 // point numbers will return -Infinity
 
-// 11. Simple Data Types
+// 11. Simple Data Types: copy by value
 let num1 = 7;
 num1 += 1;
 console.log(num1); // prints => 8; you can't change a number value; you can't change the value 7 to the value 8
@@ -96,7 +96,7 @@ let num2 = num1;
 num2 -= 1;
 console.log(num1); // still prints => 8; while the value stored in num1 was copied into num2, changing the value
 // of num2 will not affect the value stored in num1;
-// Complex Data Types
+// Complex Data Types: Copy by reference
 var obj1 = { one: "hello"};
 var obj2 = obj1; // value stored in obj2 is a reference to the value stored in obj1 ,they both point to same object
 obj2.one = "hello world";

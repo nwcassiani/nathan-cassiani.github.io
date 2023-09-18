@@ -27,7 +27,7 @@
  */
 
 // 1. Assignment Operators
-// Using <=> assigns a value to the right of the operator to a variable on the right of it
+// Using <=> assigns a value to the right of the operator to a variable on the left of it
 var myVar = "hello"; // the = operator assigns the string value of “hello” to the variable myVar; 
 
 // Javascript has compound assignment operators, which combine = with arithmetic operators. 

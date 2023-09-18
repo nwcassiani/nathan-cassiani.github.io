@@ -18,7 +18,7 @@
  * 4. Logical operators are used to determine the logic between variables or values, and are typically used with Boolean values. Javascript
  * supports three logical operators: && (and), || (or) and ! (not, also called the bang operator).
  * 
- * 5. A unary operator operates on only one value. (mention prefix and postfix?)
+ * 5. A unary operator operates on only one value.
  * 
  * 6. The ternary operator, or conditional operator, assigns a value to a variable based on some condition. This is the
  * only operator in Javascript that takes on three operands: a condition followed by a ?, then an expression to execute if the 

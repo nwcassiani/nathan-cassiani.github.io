@@ -2,19 +2,19 @@
  * 
  * VARIABLES
  * 
- * 0: Variables are named identifiers that can point to a value of a particular type, such as strings, numbers, Booleans, arrays, 
- * objects, and other data types. We use variables to hold values in memory during the lifecycle of our program. You can assign data to 
- * variables and then refer to the data simply by naming the variable. Variables are called so because we can change the value (and type of 
- * value) to which they point. 
+ * 0: Variables are named identifiers that can point to a value of a particular type, such as strings, numbers, Booleans, 
+ * arrays, objects, and other data types. We use variables to hold values in memory during the lifecycle of our program. 
+ * You can assign data to variables and then refer to the data simply by naming the variable. Variables are called so 
+ * because we can change the value (and type of value) to which they point. 
  * 
- * 1: Declaration and assignment: To declare a variable we use a keyword (var, let or const) followed by an identifier, or name. We 
- * use an assignment operator to assign value to our variable.
+ * 1: Declaration and assignment: To declare a variable we use a keyword (var, let or const) followed by an identifier, 
+ * or name. We use an assignment operator to assign value to our variable.
  * 
- * 2: var, let, const: When Javascript was initially created, var was the only keyword you could use to declare variables. To remedy some
- * problems with the var keyword, Javascript introduced the keywords let and const.
+ * 2: var, let, const: When Javascript was initially created, var was the only keyword you could use to declare variables.
+ * To remedy some problems with the var keyword, Javascript introduced the keywords let and const.
  * 
- * 3: Hoisting: Hoisting is Javascript's default behavior of moving declarations to the top of the current scope. Variables defined with 
- * var are hoisted to the top of their scope.
+ * 3: Hoisting: Hoisting is Javascript's default behavior of moving declarations to the top of the current scope. 
+ * Variables defined with var are hoisted to the top of their scope.
  */
 
 // 1. Declaration and Assignment
@@ -23,7 +23,7 @@ var myName;
 console.log(myName); // prints => undefined
 
 // Initialization is another way of saying we've assigned the created variable to a value
-myName = "nathan";
+myName = "nathan"; // since myName has already been declared, we do not need to use var keyword at assignment
 console.log(myName); // prints => nathan
 
 // Declaration and assignment can be done at the same time

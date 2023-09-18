@@ -48,9 +48,16 @@ let lastName = "cassiani";
 
 // const: like let, const variables are naturally block-scoped,they cannot be initialized as undefined, or redeclared
 // However, they cannot be reassigned. If const is used on an object, though, it's properties can be added, updated, or removed
+// const names; // this is commented out for throwing an error in my code
+// console.log(names); // SyntaxError: Missing initializer in const declaration
 
-/* var is function scoped; let and const are block scoped. This means that var variables will be stuck in the scope of a function, but
-not in the scope of if/else statements, or loops. let and const will be stuck in scope of any code block (block scoped)
+const firstNames = [];
+firstNames.push("Nathan"); // this is okay, values can be added to const arrays and const objects
+console.log(firstNames); // prints => [ 'Nathan' ]
+
+/* var is function scoped; let and const are block scoped. This means that var variables will be stuck in the scope of
+a function, but not in the scope of if/else statements, or loops. let and const will be stuck in scope of any code 
+block (block scoped)
 */
 if (true) {
     var x = 10;

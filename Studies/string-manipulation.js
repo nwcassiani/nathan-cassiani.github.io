@@ -62,3 +62,11 @@ console.log(fullName.repeat(2)); // prints => Nathan CassianiNathan Cassiani
 // will replace all specified characters, between / and /g, with a given character in quotes, like so:
 console.log(fullName.replace(/a/g, " ")); // prints => N th n C ssi ni
 // has replaced all "a" characters with a blank space
+
+//parseInt()
+// parseInt() will accept a string value of a number and convert it to a number value. It will default to a whole decimal number.
+console.log(parseInt("10")); // prints => 10
+console.log(parseInt("10.99")) // prints => 10
+//parseFloat()
+// We can use parseFloat when we know that we have values representing a floating point number
+console.log(parseFloat("10.99")) // prints => 10.99 

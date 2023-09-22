@@ -77,3 +77,9 @@ console.log(parseInt("10.99")) // prints => 10
 //parseFloat()
 // We can use parseFloat when we know that we have values representing a floating point number
 console.log(parseFloat("10.99")) // prints => 10.99 
+
+// charAt()
+/* Similar to using bracket notation to access a specific character in a string, the charAt method will access the character at
+a specified index. 
+*/
+console.log(firstName.charAt(1).toUpperCase()); // prints => A

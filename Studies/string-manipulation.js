@@ -24,6 +24,12 @@ name += lastName;
 console.log(name); // prints => Nathan Cassiani
 
 // 2. With string methods
+// concat method
+// the concat method can also be used to join strings together, like the + operator
+let middleName = ' William ';
+let completeName = firstName.concat(middleName, lastName);
+console.log(completeName); // prints => Nathan William Cassiani
+
 // split() method
 // The split() method divides a string into an array of two or more substrings and returns it, 
 // depending on the pattern, divider, or delimiter provided.
@@ -67,6 +73,7 @@ console.log(fullName.replace(/a/g, " ")); // prints => N th n C ssi ni
 // parseInt() will accept a string value of a number and convert it to a number value. It will default to a whole decimal number.
 console.log(parseInt("10")); // prints => 10
 console.log(parseInt("10.99")) // prints => 10
+
 //parseFloat()
 // We can use parseFloat when we know that we have values representing a floating point number
 console.log(parseFloat("10.99")) // prints => 10.99 

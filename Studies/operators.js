@@ -76,16 +76,26 @@ console.log("3" == 3); // string value of 3 is "loosely equal" to number value o
 console.log("3" === 3); // will print => false
 
 // > : Greater than
-// >=  Greater than or equal to
-// < : Less than
-// <= : Less than or equal to 
-console.log(100 > 200); // prints => false
+console.log(100 > 100); // prints => false
 
 // We can use comparison operators to produce Boolean values, which will influence how our code runs
+// >=  Greater than or equal to
 if (200 >= 100) { // if true... which it is
     // code here will execute
     console.log("Very True");
 }
+
+// < : Less than
+for(let i = 0; i < 10; i++){
+    console.log(i); // will print numbers 0-9 to console, will not execute code when i = 10
+}
+
+// <= : Less than or equal to 
+for(let i = 0; i <= 10; i++){
+    console.log(i); // will print numbers 0-10 to console, will execute code when i = 10, but not on next iteration (i = 1);
+}
+
+
 
 // 4. Logical Operators
 // The and (&&) operator results in true only if both values given to it are true

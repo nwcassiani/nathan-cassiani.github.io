@@ -17,6 +17,7 @@
 // if
 let color = 'black';
 let reaction; 
+// if this condition resolves to true, the following code will run. If it resolves to false, following code will not run
 if (color === 'white'){ // resolves to false
     reaction = 'bright'; // this code doesn't run
 }
@@ -26,8 +27,12 @@ console.log(reaction); // prints => undefined
 // else if
 if (color === 'white'){ // false
     reaction = 'bright';
+    // we can further direct our code by adding else if statements
+    // else if: previous code resolved to false, check if the following condition is true
 } else if (color === 'black'); // true
     reaction = 'dark'; // this code executes
+    // You can add as many else if's as you'd like. They will only execute as long as previous conditions resolved to false
+    // once a condition evaluates to true in your code, the immediate following code will be executed and following conditions will not be evaluated
 
 console.log(reaction); // prints => dark
 
@@ -37,7 +42,7 @@ if (color === 'white'){ // false
     reaction = 'bright';
 } else if (color === 'black'){ // false
     reaction = 'dark'; 
-} else { // if previous code resolves to false, following code will run
+} else { // else: provides a default code; if all previous conditions resolve to false, following code will run:
     reaction = 'unclear';
 }
 console.log(reaction); // prints => unclear

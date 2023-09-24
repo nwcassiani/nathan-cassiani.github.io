@@ -25,12 +25,12 @@ while(count < 10){ // (condition) while true, following code will execute
 for (let i = 0; i < 10; i++){
     console.log(i); // code to execute; will print => 0 1 2 3 4 5 6 7 8 9 
 }
-// start: at what point our loop will begin iterating. Here, starting at zero, and will iterate while i is less than 10
+// start: at what point our loop will begin iterating. Here, starting at zero, and will excute following code while i is less than 10
 // stop: at what point our loop will stop iterating. Here, when i = 10, the following code will not execute and iterations will stop
 // increment: the rate at which the value of i will increase (or decrease). Here, i will be reassigned in increment by 1 on each iteration
 
 // we can decrement instead of increment, and change the amount by which we increment/decrement
-// here the start value is the upper limit, and stopping point is 0
+// here the start value is the upper limit, and stopping point is 0. The value of i will decrease by 2 on each iteration
 for (let i = 10; i >= 0; i -= 2){
     console.log(i); // will print => 10 8 6 4 2 0 to console
 }

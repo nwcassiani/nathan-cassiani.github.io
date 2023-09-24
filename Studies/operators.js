@@ -80,7 +80,7 @@ console.log(100 > 100); // prints => false
 
 // We can use comparison operators to produce Boolean values, which will influence how our code runs
 // >=  Greater than or equal to
-if (200 >= 100) { // if true... which it is
+if (100 >= 100) { // if true... which it is
     // code here will execute
     console.log("Very True");
 }
